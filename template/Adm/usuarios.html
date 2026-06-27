@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios cadastrados</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <div class="grupo-card">
+        <h4>Vendedores</h4>
+        {%for v in vendedor%}
+            <p>{{v.usuario}} - idade:{{v.idade}} - CPF: {{v.cpf}} - Senha: {{v.senha}}</p> 
+
+            {%endfor%}
+    </div>
+
+    <div class="grupo-card">
+    <h4>Caixa</h4>
+    {%for c in caixa%}
+        <p>{{c.usuario}} - idade:{{c.idade}} - CPF: {{c.cpf}} - Senha: {{c.senha}}</p>
+
+        {%endfor%}
+    </div>
+
+    <div class="grupo-card">
+    <h4>Estoquista</h4>
+    <p>{%for e in estoquista%}</p>
+        <p>{{e.usuario}} - idade:{{e.idade}} - CPF: {{e.cpf}} - Senha: {{e.senha}}</p>
+
+    {%endfor%}
+    </div>
+</body>
+</html>

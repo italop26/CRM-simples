@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    
+</head>
+<body>
+    <div class="inicio">
+        <h1>Bem Vindo ao Sistema de Login da empresa</h1>
+    <form method="post">
+        {% csrf_token %}
+    <div class="container">
+    <h1>Login</h1>
+    <label>Usuário: <br></label>
+    <input type="text" name="username" ><br><br>
+    <label>Senha: <br></label>
+    <input type="password" name="password" required><br><br>
+    {{erro}}
+    <button type="submit">Entrar</button>
+     
+    </form>
+    </div>
+</body>
+</html>

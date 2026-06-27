@@ -1,0 +1,98 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclui usuario</title>
+    
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <form method="POST">
+    {% csrf_token %}
+
+    <input type="hidden" name="acao" value="buscar">
+
+    <input type="text" name="busca" placeholder="Buscar usuário">
+
+    <button type="submit">
+        Buscar
+    </button>
+</form>
+
+<hr>
+
+<h2>Vendedores</h2>
+
+{% for v in vendedores %}
+    <p>
+        {{ v.usuario }} - Vendedor
+
+        <form method="POST" style="display:inline;">
+            {% csrf_token %}
+
+            <input type="hidden" name="acao" value="excluir">
+            <input type="hidden" name="id" value="{{ v.id }}">
+            <input type="hidden" name="cargo" value="vendedor">
+
+            <button type="submit">
+                🗑 Excluir
+            </button>
+        </form>
+    </p>
+{% empty %}
+    <p>Nenhum vendedor encontrado.</p>
+{% endfor %}
+
+<hr>
+
+<h2>Caixas</h2>
+
+{% for c in caixas %}
+    <p>
+        {{ c.usuario }} - Caixa
+
+        <form method="POST" style="display:inline;">
+            {% csrf_token %}
+
+            <input type="hidden" name="acao" value="excluir">
+            <input type="hidden" name="id" value="{{ c.id }}">
+            <input type="hidden" name="cargo" value="caixa">
+
+            <button type="submit">
+                🗑 Excluir
+            </button>
+        </form>
+    </p>
+{% empty %}
+    <p>Nenhum caixa encontrado.</p>
+{% endfor %}
+
+<hr>
+
+<h2>Estoquistas</h2>
+
+{% for e in estoquistas %}
+    <p>
+        {{ e.usuario }} - Estoquista
+
+        <form method="POST" style="display:inline;">
+            {% csrf_token %}
+
+            <input type="hidden" name="acao" value="excluir">
+            <input type="hidden" name="id" value="{{ e.id }}">
+            <input type="hidden" name="cargo" value="estoquista">
+
+            <button type="submit">
+                🗑 Excluir
+            </button>
+        </form>
+    </p>
+{% empty %}
+    <p>Nenhum estoquista encontrado.</p>
+{% endfor %}
+   
+
+</body>
+</html>

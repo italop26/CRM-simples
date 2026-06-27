@@ -1,0 +1,53 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novos usuarios</title>
+    
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Adicionar Novos Usuarios</h1>
+        <form method="POST">
+            {% csrf_token %}
+
+        
+            <label>Nome:</label>
+    <input type="text" name="usuario">
+
+    <label>CPF:</label>
+    <input type="text" name="cpf">
+
+    <label>Idade:</label>
+    <input type="number" name="idade">
+
+    <label>Senha:</label>
+    <input type="password" name="senha">
+
+    <label>Cargo</label>
+    <select name="cargo">
+        <option value="adm">Administrador</option>
+        <option value="vendedor">Vendedor</option>
+        <option value="estoquista">Estoquista</option>
+        <option value="caixa">Caixa</option>
+    </select>
+
+    
+         <br>
+         <br>
+        {% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+        <button type="submit" class="button"> Adicionar</button>
+        </form>
+        <a href="{%url 'painel_adm'%}">
+        <button>Sair</button>
+        </a>
+    </div>
+</body>
+</html>

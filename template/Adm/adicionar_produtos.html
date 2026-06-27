@@ -1,0 +1,27 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adicionar</title>
+    
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <div class="container">
+            <h1>Adicionar o Estoque</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label class="name" >Nome do produto </label>
+            <input type="text" name="nome_produto">
+            <label class="preco"><br> Preço  </label>
+            <input type="number" name="preco" step="any">
+            <label><br>Estoque</label>
+            <input type="number" name="estoque">
+            <button type="submit">Adicionar</button>
+        </form>
+    </div>
+
+</body>
+</html>

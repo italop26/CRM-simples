@@ -1,0 +1,31 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>painel do estoquista</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+
+    <h1>Bem Vindo Estoquista!</h1>
+    <h2>Estoque de agora</h2>
+    <div class="atalhos">
+        <ul>
+            <li><a href="{% url 'estoques_atual' %}">Estoques</a></li>
+        </ul>
+    </div>
+        <div class="grupo-card">
+        {% for p in estoques %}
+            <p>{{ p.nome_produto }}</p>
+            <p>Estoque: {{ p.estoque }}</p>
+
+        <a href="{% url 'atualizar_estoque' p.id %}">Atualizar Estoque</a>
+        
+            {% endfor %}
+
+    </div>
+    
+</body>
+</html>

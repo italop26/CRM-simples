@@ -1,0 +1,132 @@
+body {
+    background-color: rgb(38, 226, 38);
+}
+li {
+    list-style: none;
+    margin: 10px 0;
+    text-decoration: none;
+}
+.inicio {
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 40px;
+    background-color: rgb(255, 255, 255);
+    padding: 50px 20px;
+   
+
+}
+.container {
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    
+    
+}
+h1, label, input {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+button {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    
+}
+button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    
+}
+
+.produto {
+    display: flex;
+    padding: 5px;
+    height: 20px;
+    width: 300px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+}
+
+.atalhos {
+    background-color: rgb(255, 255, 255);
+    padding: 0 20px;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.atalhos ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.atalhos ul li a {
+    display: block;
+    padding: 14px 18px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    border-bottom: 3px solid transparent;
+}
+
+.grupos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.grupo-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 16px 20px;
+    min-width: 220px;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-top: 4px solid rgb(38, 204, 38);
+}
+
+.grupo-card h4 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.grupo-card p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #444;
+    padding: 6px 10px;
+    border-radius: 5px;
+    background-color: #f4f6fb;
+}
+
+.grupo-card p:hover {
+    background-color: #e8eef9;
+}

@@ -1,0 +1,59 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <title>painel principal</title>
+</head>
+<body>
+    <header>
+        <h1>Painel Administrativo</h1>
+        <h2>Bem-vindo, ADM!</h2>
+
+        <h3>Funcionalidades Administrativas</h3>
+        <div class="atalhos">
+        <ul>
+            <li><a href="{%url 'adicionar_usuario'%}">Adicionar Usuários</a></li>
+            <li><a href="{% url 'adicionar_produto' %} ">Adicionar Produtos</a></li>
+            <li><a href="{% url 'excluir_usuarios' %}">Excluir Usuários</a></li>
+            <li><a href="{% url 'relatorios' %}">Relatórios de Atividades</a></li>
+            <li><a href="{%url 'estoques'%}">Estoque</a></li>
+            <li><a href="{% url 'usuarios'%}">Usuario</a></li>
+        </ul>
+        </div>
+    </header>
+    
+    <div class="grupos-container">
+
+        <div class="grupo-card">
+            <h4>Vendedores</h4>
+            {%for v in vendedor%}
+                <p>{{v.usuario}} - R${{v.vendas}}</p>
+
+                {%endfor%}
+        </div>
+    
+    <div class="grupo-card">
+        <h4>Caixa</h4>
+        {%for c in caixa%}
+            <p>{{c.usuario}} -</p>
+
+            {%endfor%}
+
+        </div>
+    
+    <div class="grupo-card">
+        <h4>Estoquista</h4>
+        <p>{%for e in estoquista%}</p>
+            <p>{{e.usuario}} - </p>
+
+        {%endfor%}
+
+        </div>
+
+    </div>
+</body>
+</html>

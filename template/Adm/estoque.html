@@ -1,0 +1,20 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="stylesheet" href="{%static 'css/estilos.css' %}">
+</head>
+<body>
+    <div class="grupo-card">
+    <h1>Estoque</h1>
+    <h2>Estoque atual</h2>
+    {%for p in produto%}
+    <p>{{p.nome_produto}} - {{p.estoque}}</p>
+
+    {%endfor%}
+    </div>
+</body>
+</html>
